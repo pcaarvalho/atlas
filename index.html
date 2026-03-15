@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlas AI Nexus — Inteligência Artificial para Empresas</title>
+  <meta name="description" content="Soluções avançadas de Inteligência Artificial, automação inteligente e agentes de IA para empresas brasileiras. Automatize processos, reduza custos e acelere resultados.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <!-- Hexagonal Logo Mark -->
+        <svg width="36" height="38" viewBox="0 0 36 38" fill="none">
+          <path d="M18 0L35.3 10v18L18 38 .7 28V10L18 0z" fill="url(#logoGrad)" opacity="0.9"/>
+          <path d="M18 6L29 12.5v12L18 31 7 24.5v-12L18 6z" fill="#1A0A2E"/>
+          <text x="18" y="22" text-anchor="middle" font-family="Exo 2" font-weight="800" font-size="12" fill="#D4A53C">A</text>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="38">
+              <stop stop-color="#D4A53C"/>
+              <stop offset="1" stop-color="#E8C46A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span><span class="logo-bold">Atlas AI</span> <span class="logo-thin">Nexus</span></span>
+      </a>
+
+      <div class="nav-center">
+        <a href="#sobre">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Soluções</a>
+        <a href="#cases">Cases</a>
+        <a href="#contato">Fale conosco</a>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-social">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+        <a href="#contato" class="nav-cta">ENTRE EM CONTATO</a>
+      </div>
+
+      <button class="nav-mobile" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre">Home</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Soluções</a>
+    <a href="#cases">Cases</a>
+    <a href="#contato">Fale conosco</a>
+    <a href="#contato" class="btn btn-primary">Entre em Contato</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-texture"></div>
+    <div class="hero-glow hero-glow--1"></div>
+    <div class="hero-glow hero-glow--2"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          IA aplicada com<br>
+          <em>estratégia para<br>transformar</em> a sua<br>empresa
+        </h1>
+
+        <div class="hero-description">
+          <p>Soluções inteligentes para reduzir custos, otimizar processos e acelerar o crescimento do seu negócio com Inteligência Artificial.</p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#servicos" class="btn btn-primary">CONHEÇA MAIS</a>
+          <a href="#contato" class="btn btn-outline">FALE COM ESPECIALISTA</a>
+        </div>
+
+        <div class="hero-clients">
+          <div class="hero-clients-dots">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span>Clientes que confiam em nós.</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-hex-wrapper">
+          <div class="hero-hex-border"></div>
+          <img src="hero-image.png" alt="Profissional analisando dados com IA" class="hero-hex-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT + PROCESS (white) ===== -->
+  <section class="section section--light" id="sobre">
+    <div class="container">
+      <div class="about-intro">
+        <span class="section-label section-label--light reveal">Sobre a Atlas AI Nexus</span>
+        <h2 class="section-title reveal reveal-d1">
+          <em>IA personalizada</em> para resolver os<br>desafios da sua empresa
+        </h2>
+        <p class="section-subtitle mx-auto reveal reveal-d2">
+          Na <strong>Atlas AI Nexus</strong>, desenvolvemos e implementamos <strong>soluções sob medida</strong> para tornar sua empresa mais eficiente, lucrativa e sustentável.
+        </p>
+      </div>
+
+      <h3 class="section-title text-center reveal reveal-d2" style="font-size:1.4rem;margin-bottom:40px;">
+        <em>Como podemos te ajudar?</em>
+      </h3>
+
+      <div class="process-grid">
+        <div class="process-card reveal reveal-d1">
+          <div class="process-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Diagnóstico</h3>
+          <p>Entendemos os desafios e identificamos onde a IA pode gerar mais impacto no seu negócio.</p>
+        </div>
+        <div class="process-card reveal reveal-d2">
+          <div class="process-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          </div>
+          <h3>Implementação</h3>
+          <p>Criamos e integramos soluções de IA personalizadas, garantindo que a tecnologia funcione dentro da sua operação.</p>
+        </div>
+        <div class="process-card reveal reveal-d3">
+          <div class="process-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+          </div>
+          <h3>Monitoramento e Otimização</h3>
+          <p>Acompanhamos o desempenho, ajustamos estratégias e garantimos que sua IA continue entregando resultados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES (dark) ===== -->
+  <section class="section section--dark" id="servicos">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label section-label--dark reveal">Nossos Serviços</span>
+        <h2 class="section-title reveal reveal-d1" style="max-width:620px;margin:0 auto 16px;">
+          Nossos serviços de IA<br><em>para empresas</em>
+        </h2>
+        <p class="section-subtitle mx-auto reveal reveal-d2">
+          Soluções completas de Inteligência Artificial, da estratégia à implementação, para empresas que querem liderar com tecnologia.
+        </p>
+      </div>
+
+      <div class="services-interactive reveal reveal-d1">
+        <!-- Sidebar Navigation (Toggles) -->
+        <div class="services-sidebar">
+          <button class="service-tab active" data-target="svc-automacao">
+            <span class="tab-icon">⚡</span>
+            <span class="tab-title">Automação Inteligente</span>
+          </button>
+          <button class="service-tab" data-target="svc-agentes">
+            <span class="tab-icon">🤖</span>
+            <span class="tab-title">Times de Agentes de IA</span>
+          </button>
+          <button class="service-tab" data-target="svc-dados">
+            <span class="tab-icon">📊</span>
+            <span class="tab-title">Análise de Dados e IA Preditiva</span>
+          </button>
+          <button class="service-tab" data-target="svc-consultoria">
+            <span class="tab-icon">🧠</span>
+            <span class="tab-title">Consultoria Estratégica</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Content Area -->
+        <div class="services-content-wrapper">
+          
+          <!-- Panel 1: Automação -->
+          <div class="service-panel active" id="svc-automacao">
+            <div class="panel-info">
+              <h3>Automação Inteligente</h3>
+              <p>Processos automatizados com IA para eliminar tarefas repetitivas, reduzir erros e aumentar a eficiência operacional da sua empresa estruturando fluxos de trabalho de alto desempenho.</p>
+              
+              <ul class="panel-results">
+                <li>Eliminação de rotinas manuais</li>
+                <li>Integração perfeita entre sistemas legados (ERP, CRM)</li>
+                <li>Redução imediata em custos operacionais e margem de erro</li>
+              </ul>
+              
+              <a href="#contato" class="btn btn-outline-gold">Otimizar Processos</a>
+            </div>
+            <div class="panel-visual">
+              <img src="service-automation.png" alt="Automação Inteligente em IA" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Panel 2: Agentes -->
+          <div class="service-panel" id="svc-agentes">
+            <div class="panel-info">
+              <h3>Agentes e Times de Agentes de IA</h3>
+              <p>Atendimento ágil e eficiente com equipes Multi-Agente treinadas na sua base de conhecimento corporativa. Eles operam 24/7 em vendas, suporte e operações internas colaborando entre si.</p>
+              
+              <ul class="panel-results">
+                <li>Suporte multicanal instantâneo (WhatsApp, E-mail, Site)</li>
+                <li>Qualificação de leads e SDRs autônomos</li>
+                <li>Redução dramática no tempo de resposta (SLA)</li>
+              </ul>
+              
+              <a href="#contato" class="btn btn-outline-gold">Implementar Agentes</a>
+            </div>
+            <div class="panel-visual">
+              <img src="service-agents.png" alt="Sistemas Multi-Agente de Inteligência Artificial" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Panel 3: Dados -->
+          <div class="service-panel" id="svc-dados">
+            <div class="panel-info">
+              <h3>Análise de Dados e IA Preditiva</h3>
+              <p>Inteligência central para tomadas de decisão complexas. Transforme dados brutos em insights acionáveis com modelos preditivos que antecipam cenários, riscos e oportunidades no mercado.</p>
+              
+              <ul class="panel-results">
+                <li>Previsão precisa de demanda e churn de clientes</li>
+                <li>Dashboards interativos de alto impacto gerencial</li>
+                <li>Identificação automática de anomalias em tempo real</li>
+              </ul>
+              
+              <a href="#contato" class="btn btn-outline-gold">Extrair Insights</a>
+            </div>
+            <div class="panel-visual">
+              <img src="service-data.png" alt="Análise de Dados com Inteligência Artificial Preditiva" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Panel 4: Consultoria -->
+          <div class="service-panel" id="svc-consultoria">
+            <div class="panel-info">
+              <h3>Consultoria Estratégica em IA</h3>
+              <p>Diagnóstico completo da sua operação e elaboração de um blueprint técnico e estratégico. Traçamos e executamos um roadmap claro e mensurável projetando o ROI para cada etapa do projeto.</p>
+              
+              <ul class="panel-results">
+                <li>Assessment técnico de viabilidade e maturidade de dados</li>
+                <li>Arquitetura de soluções customizadas premium</li>
+                <li>Treinamento de equipes para adoção tecnológica</li>
+              </ul>
+              
+              <a href="#contato" class="btn btn-outline-gold">Diagnóstico Gratuito</a>
+            </div>
+            <div class="panel-visual">
+              <img src="service-consulting.png" alt="Consultoria Estratégica em IA" loading="lazy">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="text-center reveal reveal-d3" style="margin-top:48px;">
+        <a href="#contato" class="btn btn-primary">Fale com um especialista</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIFFERENTIALS (white) ===== -->
+  <section class="section section--light" id="diferenciais">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label section-label--light reveal">Diferenciais</span>
+        <h2 class="section-title reveal reveal-d1" style="max-width:580px;margin:0 auto 16px;">
+          <em>Simplicidade, eficiência e impacto imediato.</em> IA feita para os desafios da sua empresa.
+        </h2>
+      </div>
+
+      <div class="diff-grid">
+        <div class="diff-card reveal reveal-d1">
+          <div class="diff-icon">🔬</div>
+          <h3>Tecnologia de Ponta</h3>
+          <p>Modelos e frameworks mais avançados do mercado global de IA.</p>
+        </div>
+        <div class="diff-card reveal reveal-d2">
+          <div class="diff-icon">🎨</div>
+          <h3>Soluções Sob Medida</h3>
+          <p>Cada projeto é desenhado exclusivamente para sua realidade.</p>
+        </div>
+        <div class="diff-card reveal reveal-d3">
+          <div class="diff-icon">🚀</div>
+          <h3>Implementação Rápida</h3>
+          <p>Metodologia ágil que entrega valor desde as primeiras semanas.</p>
+        </div>
+        <div class="diff-card reveal reveal-d4">
+          <div class="diff-icon">📈</div>
+          <h3>Foco em ROI</h3>
+          <p>Toda solução medida por resultados reais: receita e eficiência.</p>
+        </div>
+        <div class="diff-card reveal reveal-d5">
+          <div class="diff-icon">🏆</div>
+          <h3>Expertise Comprovada</h3>
+          <p>Experiência em projetos de IA para empresas líderes de mercado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CASES (light — NexIA Lab style) ===== -->
+  <section class="section section--cases" id="cases">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:56px;">
+        <span class="section-label section-label--light reveal">Cases de Sucesso</span>
+        <h2 class="section-title reveal reveal-d1" style="max-width:680px;margin:0 auto 16px;">
+          Nossos clientes e os <em>resultados que geramos</em>
+        </h2>
+        <p class="section-subtitle mx-auto reveal reveal-d2">
+          Veja como ajudamos empresas a reduzir custos, automatizar processos e crescer mais rápido com soluções de IA de alto impacto.
+        </p>
+      </div>
+
+      <!-- Case 1 — Image Left -->
+      <div class="case-row reveal">
+        <div class="case-row-image">
+          <img src="case-atendimento.png" alt="IA para Atendimento ao Cliente" loading="lazy">
+        </div>
+        <div class="case-row-content">
+          <h3>IA para Atendimento ao Cliente — E-commerce</h3>
+          <div class="case-stars">★★★★★</div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Desafio:</strong>
+            <p>Central de atendimento sobrecarregada com mais de <strong>3.000 tickets/mês</strong>, tempo de resposta de 24h e satisfação abaixo de 70%.</p>
+          </div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Solução:</strong>
+            <p>Agente de IA conversacional integrado ao WhatsApp e chat do site, resolvendo dúvidas, processando trocas e direcionando casos complexos — 24/7.</p>
+          </div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Resultados:</strong>
+            <ul class="case-results-list">
+              <li><strong>-75%</strong> de tickets direcionados a humanos</li>
+              <li><strong>94%</strong> de satisfação do cliente (CSAT)</li>
+              <li>Tempo de resposta reduzido para <strong>menos de 2 minutos</strong></li>
+              <li>Economia anual de <strong>R$180.000</strong> em operações</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2 — Image Right -->
+      <div class="case-row case-row--reversed reveal">
+        <div class="case-row-image">
+          <img src="case-financeiro.png" alt="Automação de Processos Financeiros" loading="lazy">
+        </div>
+        <div class="case-row-content">
+          <h3>Automação de Processos Financeiros — Fintech</h3>
+          <div class="case-stars">★★★★★</div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Desafio:</strong>
+            <p>Processos manuais de conciliação financeira consumindo <strong>120h/mês</strong> da equipe, com taxa de erro de 8%.</p>
+          </div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Solução:</strong>
+            <p>Pipeline de automação inteligente com IA para classificação de transações, conciliação automática e detecção de anomalias em tempo real.</p>
+          </div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Resultados:</strong>
+            <ul class="case-results-list">
+              <li><strong>-90%</strong> no tempo de conciliação financeira</li>
+              <li>Taxa de erro reduzida para <strong>0.2%</strong></li>
+              <li>Fechamento mensal <strong>3x mais rápido</strong></li>
+              <li><strong>ROI de 520%</strong> em apenas 6 meses</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3 — Image Left -->
+      <div class="case-row reveal">
+        <div class="case-row-image">
+          <img src="case-vendas.png" alt="IA para Qualificação de Leads" loading="lazy">
+        </div>
+        <div class="case-row-content">
+          <h3>IA para Qualificação de Leads — SaaS B2B</h3>
+          <div class="case-stars">★★★★★</div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Desafio:</strong>
+            <p>Volume crescente de leads sem qualificação ágil, perdendo <strong>60% das oportunidades</strong> por tempo de resposta elevado.</p>
+          </div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Solução:</strong>
+            <p>Agente de IA como SDR digital integrado ao CRM, qualificando leads automaticamente via WhatsApp e e-mail com respostas em segundos.</p>
+          </div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Resultados:</strong>
+            <ul class="case-results-list">
+              <li>Mais de <strong>85.000 leads</strong> qualificados automaticamente</li>
+              <li><strong>+32%</strong> na taxa de conversão de vendas</li>
+              <li><strong>ROI de 400%</strong> em apenas 3 meses</li>
+              <li>Atendimento ativo <strong>24/7</strong> sem intervenção humana</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 4 — Image Right -->
+      <div class="case-row case-row--reversed reveal">
+        <div class="case-row-image">
+          <img src="case-legal.png" alt="Automação Jurídica e Rastreamento de Processos" loading="lazy">
+        </div>
+        <div class="case-row-content">
+          <h3>Agente Autônomo Jurídico — Lawtech B2B</h3>
+          <div class="case-stars">★★★★★</div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Desafio:</strong>
+            <p>Acompanhamento manual de processos lento e custoso, com risco frequente de perda de prazos e desorganização documental volumosa nos escritórios.</p>
+          </div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Solução:</strong>
+            <p>Desenvolvimento de um agente de IA para rastreamento judicial via CPF/CNPJ nos sites dos tribunais, coletando eventos processuais e automatizando a triagem de documentos.</p>
+          </div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Resultados:</strong>
+            <ul class="case-results-list">
+              <li>Monitoramento real-time de mais de <strong>20.000 processos</strong> simultâneos</li>
+              <li>Redução absoluta de <strong>-80%</strong> no overhead de paralegais</li>
+              <li>Segurança total com <strong>zero falhas</strong> na notificação de andamentos</li>
+              <li>Mapeamento estruturado das pastas documentais <strong>instantâneo</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 5 — Image Left (Healthcare) -->
+      <div class="case-row reveal">
+        <div class="case-row-image">
+          <img src="case-healthcare.png" alt="IA Preditiva para Triagem em Saúde" loading="lazy">
+        </div>
+        <div class="case-row-content">
+          <h3>Triagem Preditiva em Healthcare — Rede de Hospitais</h3>
+          <div class="case-stars">★★★★★</div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Desafio:</strong>
+            <p>Superlotação crônica em prontos-atendimentos com tempo médio de espera superior a 4 horas e dificuldade na otimização das escalas médicas semanais.</p>
+          </div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Solução:</strong>
+            <p>Algoritmos de NLP para pré-triagem de sintomas via totem digital e modelos preditivos que antecipam flutuações de demanda com base no histórico hospitalar.</p>
+          </div>
+
+          <div class="case-block">
+            <strong class="case-block-label">Resultados:</strong>
+            <ul class="case-results-list">
+              <li><strong>-45%</strong> no tempo de espera no pronto-atendimento</li>
+              <li>Precisão de <strong>94%</strong> na priorização de risco vital</li>
+              <li>Escala médica otimizada gerando <strong>+30%</strong> de eficiência</li>
+              <li>Fluxo de pacientes <strong>completamente automatizado</strong> na entrada</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center reveal" style="margin-top:56px;">
+        <a href="#contato" class="btn btn-primary">Quero resultados como esses →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS (white) ===== -->
+  <section class="section section--light" id="processo">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label section-label--light reveal">Como Funciona</span>
+        <h2 class="section-title reveal reveal-d1" style="max-width:600px;margin:0 auto 16px;">
+          Do diagnóstico à <em>transformação contínua</em>
+        </h2>
+        <p class="section-subtitle mx-auto reveal reveal-d2">
+          Nosso processo é estruturado para garantir entregas consistentes, com o menor risco e o maior impacto possível.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-step reveal reveal-d1">
+          <div class="timeline-num">01</div>
+          <h3>Diagnóstico</h3>
+          <p>Mapeamos processos e identificamos onde a IA gera maior impacto.</p>
+        </div>
+        <div class="timeline-step reveal reveal-d2">
+          <div class="timeline-num">02</div>
+          <h3>Planejamento</h3>
+          <p>Roadmap detalhado com KPIs claros e projeção de ROI.</p>
+        </div>
+        <div class="timeline-step reveal reveal-d3">
+          <div class="timeline-num">03</div>
+          <h3>Implementação</h3>
+          <p>Desenvolvimento ágil com entregas incrementais e validação contínua.</p>
+        </div>
+        <div class="timeline-step reveal reveal-d4">
+          <div class="timeline-num">04</div>
+          <h3>Integração</h3>
+          <p>Conexão com CRM, ERP e APIs para operação unificada.</p>
+        </div>
+        <div class="timeline-step reveal reveal-d5">
+          <div class="timeline-num">05</div>
+          <h3>Otimização</h3>
+          <p>Monitoramento contínuo e evolução para resultados crescentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECHNOLOGIES (dark) ===== -->
+  <section class="section section--dark" id="tecnologias">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label section-label--dark reveal">Tecnologias</span>
+        <h2 class="section-title reveal reveal-d1" style="max-width:580px;margin:0 auto 16px;">
+          Construído com as <em>melhores tecnologias</em>
+        </h2>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card reveal reveal-d1">
+          <span class="tech-card-icon">🧠</span>
+          <h4>LLMs & Foundation Models</h4>
+          <p>GPT-4, Claude, Gemini, Llama e modelos fine-tuned.</p>
+        </div>
+        <div class="tech-card reveal reveal-d2">
+          <span class="tech-card-icon">📈</span>
+          <h4>Machine Learning</h4>
+          <p>Modelos preditivos, classificação, clustering e NLP.</p>
+        </div>
+        <div class="tech-card reveal reveal-d3">
+          <span class="tech-card-icon">🔌</span>
+          <h4>APIs & Integrações</h4>
+          <p>REST, GraphQL, webhooks e conectores universais.</p>
+        </div>
+        <div class="tech-card reveal reveal-d4">
+          <span class="tech-card-icon">⚙️</span>
+          <h4>Automação de Workflows</h4>
+          <p>n8n, LangChain, CrewAI e frameworks customizados.</p>
+        </div>
+        <div class="tech-card reveal reveal-d5">
+          <span class="tech-card-icon">☁️</span>
+          <h4>Cloud & Infra</h4>
+          <p>AWS, GCP, Azure — infraestrutura escalável e segura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-final" id="contato">
+    <div class="container">
+      <span class="section-label section-label--dark reveal" style="margin:0 auto 20px;display:inline-flex;">Próximo Passo</span>
+      <h2 class="section-title reveal reveal-d1">
+        Quer saber como a IA pode gerar mais<br><em>eficiência e lucro</em> na sua empresa?
+      </h2>
+      <p class="section-subtitle reveal reveal-d2">
+        Agende uma sessão estratégica gratuita e descubra o potencial da IA para o seu negócio.
+      </p>
+      <div class="cta-actions reveal reveal-d3">
+        <a href="#" class="btn btn-primary" style="padding:16px 40px;font-size:0.95rem;" onclick="return false;">
+          SOLICITAR UMA CONSULTORIA GRATUITA
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" style="color:#fff;">
+            <svg width="32" height="34" viewBox="0 0 36 38" fill="none">
+              <path d="M18 0L35.3 10v18L18 38 .7 28V10L18 0z" fill="url(#logoGrad2)" opacity="0.9"/>
+              <path d="M18 6L29 12.5v12L18 31 7 24.5v-12L18 6z" fill="#1A0A2E"/>
+              <text x="18" y="22" text-anchor="middle" font-family="Exo 2" font-weight="800" font-size="12" fill="#D4A53C">A</text>
+              <defs>
+                <linearGradient id="logoGrad2" x1="0" y1="0" x2="36" y2="38">
+                  <stop stop-color="#D4A53C"/>
+                  <stop offset="1" stop-color="#E8C46A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span><span class="logo-bold">Atlas AI</span> <span class="logo-thin">Nexus</span></span>
+          </a>
+          <p>Soluções avançadas de Inteligência Artificial, automação inteligente e agentes de IA para empresas brasileiras.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <a href="#sobre">Home</a>
+          <a href="#sobre">Sobre Nós</a>
+          <a href="#cases">Cases</a>
+          <a href="#contato">Contato</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Soluções</h4>
+          <a href="#servicos">Automação Inteligente</a>
+          <a href="#servicos">Agentes de IA</a>
+          <a href="#servicos">Integração de IA</a>
+          <a href="#servicos">IA para Dados</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <a href="#">contato@atlasainexus.com.br</a>
+          <a href="#">São Paulo, SP — Brasil</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Atlas AI Nexus — 2025 Todos os direitos reservados</span>
+        <span>Política de Privacidade</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
