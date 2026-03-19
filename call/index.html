@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas AI Nexus - Diagnóstico</title>
+    <!-- Use Tailwind via CDN for rapid exact structural replication -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purple: {
+                            deep: '#0a0118',
+                            primary: '#4a00e0',
+                            light: '#8e2de2',
+                            card: 'rgba(255, 255, 255, 0.03)',
+                            cardBorder: 'rgba(255, 255, 255, 0.08)'
+                        },
+                        gold: {
+                            DEFAULT: '#f2c538',
+                            light: '#f5d670'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Exo 2"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Custom Styles for Form Elements to match NexiaLab style exactly */
+        .glass-input {
+            background: rgba(255, 255, 255, 0);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .glass-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .glass-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        select.glass-input option {
+            background-color: var(--purple-deep);
+            color: white;
+        }
+        .btn-primary {
+            background-color: var(--gold);
+            color: #000;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(242, 197, 56, 0.4);
+        }
+        .feature-card {
+            background: linear-gradient(180deg, rgba(74, 0, 224, 0.1) 0%, rgba(10, 1, 24, 0) 100%);
+            border: 1px solid rgba(74, 0, 224, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            height: 100%;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 3rem;
+            bottom: -1rem;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold) 0%, rgba(242, 197, 56, 0) 100%);
+        }
+        .timeline-item:last-child::before {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-purple-deep text-white font-sans antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="w-full py-6 px-4 sm:px-8 lg:px-16 flex items-center justify-between z-50 relative">
+        <a href="/" class="flex items-center gap-3">
+            <svg width="40" height="42" viewBox="0 0 36 38" fill="none">
+                <path d="M18 0L35.3 10v18L18 38 .7 28V10L18 0z" fill="var(--gold)" opacity="0.9"/>
+                <path d="M18 6L29 12.5v12L18 31 7 24.5v-12L18 6z" fill="#0a0118"/>
+            </svg>
+            <span class="text-2xl font-bold tracking-wider text-white">ATLAS <span class="text-gold font-light">AI</span></span>
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-12 lg:py-24 px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                Sua operação de vendas precisa de escala constante, <span class="text-gold">previsível e lucrativa.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-lg">
+                A inteligência artificial que vende, qualifica e atende como seu melhor vendedor humano, 24/7.
+            </p>
+            <a href="#diagnostico" class="btn-primary w-full sm:w-auto text-lg">Quero agendar meu diagnóstico gratuito</a>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden border border-purple-cardBorder shadow-[0_0_40px_rgba(74,0,224,0.3)] aspect-[4/3] bg-purple-card flex items-center justify-center">
+            <!-- Placeholder for Video/Image -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-purple-primary/20 to-transparent"></div>
+            <svg class="w-20 h-20 text-gold/80" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="py-16 px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Você está perdendo vendas <span class="text-gold">e talvez nem perceba</span></h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="feature-card flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center mb-6 border border-red-500/30">
+                    <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Leads esfriam</h3>
+                <p class="text-gray-400">Tempo de resposta alto destrói taxas de conversão. Quem responde primeiro, leva a venda.</p>
+            </div>
+            <div class="feature-card flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center mb-6 border border-red-500/30">
+                    <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Respostas padronizadas</h3>
+                <p class="text-gray-400">Atendimento engessado e genérico faz o lead sentir que está falando com um robô e abandonar a compra.</p>
+            </div>
+            <div class="feature-card flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center mb-6 border border-red-500/30">
+                    <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Vendedores gastando tempo</h3>
+                <p class="text-gray-400">Seu time caro está filtrando curiosos e respondendo dúvidas básicas ao invés de fechar negócios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-4 bg-purple-primary/5 border-y border-purple-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-8">
+                    Seu primeiro <span class="text-gold">Vendedor de IA</span> treinado exclusivamente para a sua operação.
+                </h2>
+                <a href="#diagnostico" class="btn-primary w-full sm:w-auto mt-4">Quero entender como ter uma solução proprietária</a>
+            </div>
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 bg-gold/20 p-1 rounded-full text-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold">Comunicação persuasiva para o seu cliente</h4>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 bg-gold/20 p-1 rounded-full text-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold">Comportamento e roteiros dinâmicos</h4>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 bg-gold/20 p-1 rounded-full text-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold">Conhecimento do seu produto</h4>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 bg-gold/20 p-1 rounded-full text-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold">Qualificação dinâmica multi-canal</h4>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 bg-gold/20 p-1 rounded-full text-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold">Recuperação de compras</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">Qual caminho você <span class="text-gold">prefere seguir?</span></h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Caminho 1 -->
+            <div class="bg-purple-deep border border-purple-cardBorder p-8 rounded-2xl flex flex-col opacity-80">
+                <h3 class="text-xl font-bold mb-6 text-gray-400 text-center pb-4 border-b border-purple-cardBorder">Vendedor Humano</h3>
+                <ul class="space-y-4 flex-1">
+                    <li class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Trabalha 8h por dia</li>
+                    <li class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Demora para responder</li>
+                    <li class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Comete erros de processo</li>
+                    <li class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Custo fixo alto (Salário + Encargos)</li>
+                </ul>
+            </div>
+            
+            <!-- Caminho 2 -->
+            <div class="bg-purple-deep border border-purple-cardBorder p-8 rounded-2xl flex flex-col opacity-80">
+                <h3 class="text-xl font-bold mb-6 text-gray-400 text-center pb-4 border-b border-purple-cardBorder">Atendente Genérico (Chatbot)</h3>
+                <ul class="space-y-4 flex-1">
+                    <li class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Respostas padronizadas</li>
+                    <li class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Não entende contexto</li>
+                    <li class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Trava em perguntas complexas</li>
+                    <li class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Irrita o cliente</li>
+                </ul>
+            </div>
+            
+            <!-- Caminho 3 -->
+            <div class="bg-gradient-to-b from-purple-primary/20 to-transparent border border-gold p-8 rounded-2xl flex flex-col relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(242,197,56,0.2)]">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gold text-black text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">A Solução</div>
+                <h3 class="text-xl font-bold mb-6 text-gold text-center pb-4 border-b border-gold/20">Agente Especializado IA</h3>
+                <ul class="space-y-4 flex-1 text-white">
+                    <li class="flex items-center gap-3 text-sm"><svg class="w-5 h-5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> 24h por dia, 7 dias por semana</li>
+                    <li class="flex items-center gap-3 text-sm"><svg class="w-5 h-5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Respostas em menos de 1 minuto</li>
+                    <li class="flex items-center gap-3 text-sm"><svg class="w-5 h-5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> 100% de aderência ao processo comercial</li>
+                    <li class="flex items-center gap-3 text-sm"><svg class="w-5 h-5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Alta persuasão e argumentação</li>
+                    <li class="flex items-center gap-3 text-sm"><svg class="w-5 h-5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Escala infinita</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-20 px-4 sm:px-8 max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">Fluxo Completo <span class="text-gold">em ação</span></h2>
+        
+        <div class="relative">
+            <!-- Item 1 -->
+            <div class="timeline-item relative pl-12 mb-8">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-purple-primary flex items-center justify-center border-2 border-gold shadow-[0_0_10px_rgba(242,197,56,0.3)]">
+                    <span class="text-xs font-bold font-sans">1</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Lead entra</h3>
+                <p class="text-gray-400">WhatsApp, chat, formulário</p>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="timeline-item relative pl-12 mb-8">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-purple-primary flex items-center justify-center border-2 border-gold">
+                    <span class="text-xs font-bold font-sans">2</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">IA qualifica</h3>
+                <p class="text-gray-400">Interesse, momento de compra, orçamento, autoridade</p>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="timeline-item relative pl-12 mb-8">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-purple-primary flex items-center justify-center border-2 border-gold">
+                    <span class="text-xs font-bold font-sans">3</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Nutrição automática</h3>
+                <p class="text-gray-400">Conteúdo relevante, respostas instantâneas</p>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="timeline-item relative pl-12 mb-8">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-purple-primary flex items-center justify-center border-2 border-gold">
+                    <span class="text-xs font-bold font-sans">4</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Detecção de prontidão</h3>
+                <p class="text-gray-400">Sinais de urgência, remoção de objeções</p>
+            </div>
+            
+            <!-- Item 5 -->
+            <div class="timeline-item relative pl-12 mb-8">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-purple-primary flex items-center justify-center border-2 border-gold">
+                    <span class="text-xs font-bold font-sans">5</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Fechamento / Agendamento</h3>
+                <p class="text-gray-400">IA fecha vendas menores ou agenda vendedor humano com contexto</p>
+            </div>
+            
+            <!-- Item 6 -->
+            <div class="timeline-item relative pl-12">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-purple-primary flex items-center justify-center border-2 border-gold">
+                    <span class="text-xs font-bold font-sans">6</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Pós-venda</h3>
+                <p class="text-gray-400">Confirmação, acompanha onboarding, identifica upsell</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decision / The Form -->
+    <section id="diagnostico" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">A Decisão <span class="text-gold">é sua</span></h2>
+                <p class="text-lg text-gray-300">
+                    O mercado já decidiu que a IA é a nova vantagem competitiva. A única diferença entre líderes e quem ficará para trás é a rapidez da decisão.
+                </p>
+            </div>
+
+            <!-- Form Container matching Nexialab -->
+            <div class="bg-gradient-to-br from-purple-primary/10 to-purple-deep border border-purple-primary/30 rounded-3xl p-8 md:p-12 shadow-[0_0_50px_rgba(74,0,224,0.15)]">
+                <div class="mb-10 text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gold mb-6">Solicite o seu diagnóstico e receba:</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+                        <p class="flex items-center gap-2"><svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Análise do seu funil</p>
+                        <p class="flex items-center gap-2"><svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Identificação de gargalos críticos</p>
+                        <p class="flex items-center gap-2"><svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Oportunidades reais de automação</p>
+                        <p class="flex items-center gap-2"><svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Projeção de ROI</p>
+                        <p class="flex items-center gap-2"><svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Caminhos possíveis</p>
+                        <p class="flex items-center gap-2"><svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Clareza</p>
+                    </div>
+                </div>
+
+                <form id="callForm" class="space-y-6" action="https://formspree.io/f/xojkrwrp" method="POST">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-300">Nome <span class="text-red-500">*</span></label>
+                            <input type="text" id="firstName" name="nome" required class="glass-input" placeholder="Seu nome">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-300">Sobrenome <span class="text-red-500">*</span></label>
+                            <input type="text" id="lastName" name="sobrenome" required class="glass-input" placeholder="Seu sobrenome">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-300">E-mail Profissional <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" required class="glass-input" placeholder="seu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-300">WhatsApp <span class="text-red-500">*</span></label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required class="glass-input" placeholder="(00) 00000-0000">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-300">Tamanho da Empresa <span class="text-red-500">*</span></label>
+                            <select id="companySize" name="tamanho_empresa" required class="glass-input">
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="Pequena empresa (1-10 funcionários)">Pequena empresa (1-10 funcionários)</option>
+                                <option value="Média empresa (11-50 funcionários)">Média empresa (11-50 funcionários)</option>
+                                <option value="Média-grande (51-200 funcionários)">Média-grande (51-200 funcionários)</option>
+                                <option value="Grande empresa (200+ funcionários)">Grande empresa (200+ funcionários)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-300">Nicho de Atuação <span class="text-red-500">*</span></label>
+                            <input type="text" id="niche" name="nicho" required class="glass-input" placeholder="Ex: E-commerce, Info-produto, Serviços">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Faturamento Mensal Estimado <span class="text-red-500">*</span></label>
+                        <select id="revenue" name="faturamento" required class="glass-input">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Até R$ 50.000">Até R$ 50.000</option>
+                            <option value="De R$ 50.000 a R$ 200.000">De R$ 50.000 a R$ 200.000</option>
+                            <option value="De R$ 200.000 a R$ 1.000.000">De R$ 200.000 a R$ 1.000.000</option>
+                            <option value="Acima de R$ 1.000.000">Acima de R$ 1.000.000</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Qual o seu maior desafio ou o que deseja resolver com IA? <span class="text-red-500">*</span></label>
+                        <textarea id="challenge" name="desafio" required rows="4" class="glass-input" placeholder="Conte um pouco sobre o momento da sua operação..."></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Melhor horário para nossa reunião <span class="text-red-500">*</span></label>
+                        <select id="meetingTime" name="melhor_horario" required class="glass-input">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Manhã (09:00 - 12:00)">Manhã (09:00 - 12:00)</option>
+                            <option value="Tarde (13:00 - 18:00)">Tarde (13:00 - 18:00)</option>
+                        </select>
+                    </div>
+
+                    <div class="pt-6">
+                        <button type="submit" class="btn-primary w-full text-lg w-full">Solicitar Reunião Estratégica</button>
+                    </div>
+                </form>
+                
+                <div id="successMessage" class="hidden text-center py-12">
+                    <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">Solicitação Enviada!</h3>
+                    <p class="text-lg text-gray-300">Nossa equipe analisará suas informações e entrará em contato em breve para agendar seu diagnóstico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-purple-cardBorder text-center text-gray-500 text-sm mt-20">
+        <p>&copy; 2026 Atlas AI Nexus. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('callForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const data = new FormData(form);
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            
+            submitBtn.innerText = 'Enviando...';
+            submitBtn.disabled = true;
+
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    document.getElementById('successMessage').classList.remove('hidden');
+                } else {
+                    submitBtn.innerText = 'Erro ao enviar. Tente novamente.';
+                    submitBtn.disabled = false;
+                }
+            }).catch(error => {
+                submitBtn.innerText = 'Erro de conexão. Tente novamente.';
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
